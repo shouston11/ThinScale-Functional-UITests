@@ -26,7 +26,7 @@ namespace ThinScaleFunctionalTests.SharedLibrary.Services
         #region Locators
         private readonly By _challengingDomHeader = By.CssSelector("#content > div > h3");
         private readonly By _blueBtn = By.XPath(("//div[@class='large-2 columns']/a[@class='button']"));
-        private readonly  By _redBtn = By.XPath("//div[@class='large-2 columns']/a[@class='button alert']");
+        private readonly By _redBtn = By.XPath("//div[@class='large-2 columns']/a[@class='button alert']");
         private readonly By _greenBtn = By.XPath("//div[@class='large-2 columns']/a[@class='button success']");
         private readonly By _editBtn = By.XPath("//div[@class='large-10 columns']/table/tbody/tr[1]/td[7]/a[1]");
         private readonly By _deleteBtn = By.XPath("//div[@class='large-10 columns']/table/tbody/tr[1]/td[7]/a[2]");
@@ -35,38 +35,44 @@ namespace ThinScaleFunctionalTests.SharedLibrary.Services
 
         #region PageElements
         private IWebElement PageHeader => _webDriverContext.Driver.FindElement(_challengingDomHeader);
+        private IWebElement EditButton => _webDriverContext.Driver.FindElement(_editBtn);
+        private IWebElement DeleteButton => _webDriverContext.Driver.FindElement(_deleteBtn);
+        private IWebElement BlueButton => _webDriverContext.Driver.FindElement(_blueBtn);
+        private IWebElement RedButton => _webDriverContext.Driver.FindElement(_redBtn);
+        private IWebElement GreenButton => _webDriverContext.Driver.FindElement(_greenBtn);
+        private IWebElement Header => _webDriverContext.Driver.FindElement(_challengingDomHeader);
         #endregion
 
         public void ClickBlueButton()
         {
             ExpectedConditions.ElementIsVisible(_blueBtn);
-            var attributeIdBefore = _webDriverContext.Driver.FindElement(_blueBtn).GetAttribute("id");
-            _webDriverContext.Driver.FindElement(_blueBtn).Click();
-            var attributeIdAfterClick = _webDriverContext.Driver.FindElement(_blueBtn).GetAttribute("id");
+            var attributeIdBefore = BlueButton.GetAttribute("id");
+            BlueButton.Click();
+            var attributeIdAfterClick = BlueButton.GetAttribute("id");
             Assert.True(attributeIdBefore != null && attributeIdBefore != attributeIdAfterClick);
         }
 
         public void ClickRedAlertButton()
         {
             ExpectedConditions.ElementIsVisible(_redBtn);
-            var attributeIdBefore = _webDriverContext.Driver.FindElement(_redBtn).GetAttribute("id");
-            _webDriverContext.Driver.FindElement(_redBtn).Click();
-            var attributeIdAfterClick = _webDriverContext.Driver.FindElement(_redBtn).GetAttribute("id");
+            var attributeIdBefore = RedButton.GetAttribute("id");
+            RedButton.Click();
+            var attributeIdAfterClick = RedButton.GetAttribute("id");
             Assert.True(attributeIdBefore != null && attributeIdBefore != attributeIdAfterClick);
         }
 
         public void ClickGreenButton()
         {
             ExpectedConditions.ElementIsVisible(_greenBtn);
-            var attributeIdBefore = _webDriverContext.Driver.FindElement(_greenBtn).GetAttribute("id");
-            _webDriverContext.Driver.FindElement(_greenBtn).Click();
-            var attributeIdAfterClick = _webDriverContext.Driver.FindElement(_greenBtn).GetAttribute("id");
+            var attributeIdBefore = GreenButton.GetAttribute("id");
+            GreenButton.Click();
+            var attributeIdAfterClick = GreenButton.GetAttribute("id");
             Assert.True(attributeIdBefore != null && attributeIdBefore != attributeIdAfterClick);
         }
 
         public void ChallengingDomHeaderIsDisplayed(string header)
         {
-            bool ele = _webDriverContext.Driver.FindElement(_challengingDomHeader).IsElementDisplayed();
+            bool ele = Header.IsElementDisplayed();
             Assert.IsTrue(ele);
             Assert.True(PageHeader.Text == header);
         }
@@ -84,20 +90,14 @@ namespace ThinScaleFunctionalTests.SharedLibrary.Services
         public void ClickEditButton()
         {
             ExpectedConditions.ElementIsVisible(_editBtn);
-            _webDriverContext.Driver.FindElement(_editBtn).Click();
+            EditButton.Click();
         }
 
         public void ClickDeleteButton()
         {
             ExpectedConditions.ElementIsVisible(_deleteBtn);
-            _webDriverContext.Driver.FindElement(_deleteBtn).Click();
+            DeleteButton.Click();
         }
-
-        //public void BookDemoButtonIsEnabled()
-        //{
-        //    bool ele = _webDriverContext.Driver.FindElement(_bookDemoBtn).Enabled;
-        //    Assert.True(ele);
-        //}
 
         public void ValidateOnCorrectPage(string title)
         {

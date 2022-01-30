@@ -32,7 +32,7 @@ namespace ThinScaleFunctionalTests.Factories
             options.AddArgument("--ignore-certificate-errors");
             options.AddArgument("--disable-extensions");
             options.AddArgument("--disable-dev-shm-usage");
-            //options.AddArgument("--headless");
+            options.AddArgument("--headless");
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
             options.AddArgument("--enable-logging");

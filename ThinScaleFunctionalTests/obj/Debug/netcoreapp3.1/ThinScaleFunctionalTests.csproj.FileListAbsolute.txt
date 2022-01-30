@@ -482,7 +482,6 @@ C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\bin\Debug\netcoreap
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.csprojAssemblyReference.cache
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.AssemblyInfoInputs.cache
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.AssemblyInfo.cs
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.csproj.CoreCompileInputs.cache

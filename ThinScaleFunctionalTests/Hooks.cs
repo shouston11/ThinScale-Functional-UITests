@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using BoDi;
+﻿using BoDi;
 using ThinScaleFunctionalTests.Factories;
 using TechTalk.SpecFlow;
 
