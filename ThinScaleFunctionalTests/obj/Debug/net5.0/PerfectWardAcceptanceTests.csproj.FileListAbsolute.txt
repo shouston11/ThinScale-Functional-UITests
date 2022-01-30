@@ -1,0 +1,5 @@
+C:\dev\PerfectWardAcceptanceTests\PerfectWardAcceptanceTests\obj\Debug\net5.0\PerfectWardAcceptanceTests.csprojAssemblyReference.cache
+C:\dev\PerfectWardAcceptanceTests\PerfectWardAcceptanceTests\obj\Debug\net5.0\PerfectWardAcceptanceTests.dll.config
+C:\dev\PerfectWardAcceptanceTests\PerfectWardAcceptanceTests\obj\Debug\net5.0\PerfectWardAcceptanceTests.AssemblyInfoInputs.cache
+C:\dev\PerfectWardAcceptanceTests\PerfectWardAcceptanceTests\obj\Debug\net5.0\PerfectWardAcceptanceTests.AssemblyInfo.cs
+C:\dev\PerfectWardAcceptanceTests\PerfectWardAcceptanceTests\obj\Debug\net5.0\PerfectWardAcceptanceTests.csproj.CoreCompileInputs.cache

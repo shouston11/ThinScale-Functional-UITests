@@ -1,0 +1,16 @@
+{
+  "Environments": [
+    {
+      "bindingCulture": {
+        "language": "en-us"
+      },
+      "language": {
+        "feature": "en-us"
+      },
+
+      "Name": "ThinScale",
+      "Browser": "Chrome",
+      "Url": "https://the-internet.herokuapp.com/challenging_dom"
+    }
+  ]
+}
