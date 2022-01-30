@@ -489,3 +489,4 @@ C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreap
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.dll
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.pdb
 C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.genruntimeconfig.cache
+C:\dev\ThinScale-Functional-UITests\ThinScaleFunctionalTests\obj\Debug\netcoreapp3.1\ThinScaleFunctionalTests.csprojAssemblyReference.cache
