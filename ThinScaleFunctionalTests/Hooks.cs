@@ -1,4 +1,5 @@
-﻿using BoDi;
+﻿using System.Diagnostics;
+using BoDi;
 using ThinScaleFunctionalTests.Factories;
 using TechTalk.SpecFlow;
 
@@ -42,11 +43,11 @@ namespace ThinScaleFunctionalTests
             [AfterTestRun(Order = 0)]
             private static void KillProcess()
             {
-                //string taskKill = "taskkill.exe";
+                string taskKill = "taskkill.exe";
                 //string chrome = "/F /IM chrome.exe*";
                 string chromeDriver = "/F /IM chromedriver.exe*";
                 //Process.Start(taskKill, chrome);
-                //Process.Start(taskKill, chromeDriver);
+                Process.Start(taskKill, chromeDriver);
             }  
     }
 

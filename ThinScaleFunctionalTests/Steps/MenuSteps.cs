@@ -8,9 +8,9 @@ namespace ThinScaleFunctionalTests.Steps
     public sealed class MenuSteps
     {
         private readonly HomePage _homePage;
-        private readonly HeaderToolbarHelper _headerToolbar;
+        private readonly Helper _headerToolbar;
 
-        public MenuSteps(HomePage homePage, HeaderToolbarHelper headerToolbar)
+        public MenuSteps(HomePage homePage, Helper headerToolbar)
         {
             _homePage = homePage;
             _headerToolbar = headerToolbar;

@@ -9,13 +9,13 @@ using SeleniumExtras.WaitHelpers;
 
 namespace ThinScaleFunctionalTests.SharedLibrary.Services
 {
-    public class HeaderToolbarHelper
+    public class Helper
     {
         private readonly EnvironmentFixture _environmentFixture;
         private readonly WebDriverContext _webDriverContext;
         private WebDriverWait _wait;
 
-        public HeaderToolbarHelper(WebDriverContext webDriverContext, EnvironmentFixture environmentFixture)
+        public Helper(WebDriverContext webDriverContext, EnvironmentFixture environmentFixture)
         {
             _webDriverContext = webDriverContext;
             var environmentName = System.Environment.GetEnvironmentVariable(Constants.EnvironmentName);
