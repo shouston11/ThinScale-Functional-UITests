@@ -76,5 +76,29 @@ namespace ThinScaleFunctionalTests.Steps
         {
             _headerToolbar.CheckUrlContains(url);
         }
+
+        [Then(@"refreshing the page should update the answer")]
+        public void RefreshPage()
+        {
+            _headerToolbar.RefreshPageAndAssertAnswerHasUpdated();
+        }
+
+        [Then(@"Clicking the blue button should update the answer value")]
+        public void ClickBlueButtonAndAssertAnswerHasChanged()
+        {
+            _headerToolbar.ClickBlueButtonAndAssertAnswerHasChanged();
+        }
+
+        [Then(@"Clicking the red button should update the answer value")]
+        public void ClickRedButtonAndAssertAnswerHasChanged()
+        {
+            _headerToolbar.ClickRedButtonAndAssertAnswerHasChanged();
+        }
+
+        [Then(@"Clicking the green button should update the answer value")]
+        public void ClickGreenButtonAndAssertAnswerHasChanged()
+        {
+            _headerToolbar.ClickGreenButtonAndAssertAnswerHasChanged();
+        }
     }
 }

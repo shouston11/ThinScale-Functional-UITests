@@ -1,6 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using ThinScaleFunctionalTests.Factories;
 using ThinScaleFunctionalTests.Fixtures;
@@ -41,6 +42,7 @@ namespace ThinScaleFunctionalTests.SharedLibrary.Services
         private IWebElement RedButton => _webDriverContext.Driver.FindElement(_redBtn);
         private IWebElement GreenButton => _webDriverContext.Driver.FindElement(_greenBtn);
         private IWebElement Header => _webDriverContext.Driver.FindElement(_challengingDomHeader);
+        private IWebElement Div => _webDriverContext.Driver.FindElement(By.Id("content"));
         #endregion
 
         public void ClickBlueButton()
@@ -91,6 +93,42 @@ namespace ThinScaleFunctionalTests.SharedLibrary.Services
         {
             ExpectedConditions.ElementIsVisible(_editBtn);
             EditButton.Click();
+        }
+
+        public void RefreshPageAndAssertAnswerHasUpdated()
+        {
+            var answerElementBeforeRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            _webDriverContext.Driver.Navigate().Refresh();
+
+            var answerElementAfterRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            Assert.True(answerElementBeforeRefresh != answerElementAfterRefresh);
+        }
+
+        public void ClickBlueButtonAndAssertAnswerHasChanged()
+        {
+            ExpectedConditions.ElementIsVisible(_blueBtn);
+            var answerElementBeforeRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            BlueButton.Click();
+            var answerElementAfterRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            Assert.True(answerElementBeforeRefresh != answerElementAfterRefresh);
+        }
+
+        public void ClickRedButtonAndAssertAnswerHasChanged()
+        {
+            ExpectedConditions.ElementIsVisible(_redBtn);
+            var answerElementBeforeRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            RedButton.Click();
+            var answerElementAfterRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            Assert.True(answerElementBeforeRefresh != answerElementAfterRefresh);
+        }
+
+        public void ClickGreenButtonAndAssertAnswerHasChanged()
+        {
+            ExpectedConditions.ElementIsVisible(_greenBtn);
+            var answerElementBeforeRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            GreenButton.Click();
+            var answerElementAfterRefresh = _webDriverContext.Driver.ExecuteJavaScript<string>("return arguments[0].innerHTML", Div);
+            Assert.True(answerElementBeforeRefresh != answerElementAfterRefresh);
         }
 
         public void ClickDeleteButton()

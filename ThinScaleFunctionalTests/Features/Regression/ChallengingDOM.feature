@@ -59,3 +59,19 @@ Scenario: Check a delete button can be clicked and updates the url
 	Given user navigates to the Challenging DOM url
 	And clicks the delete button on the first line
 	Then the url should update after click and contain '#delete'
+
+Scenario: Check answer value changes on screen refresh
+	Given user navigates to the Challenging DOM url
+	Then refreshing the page should update the answer
+
+Scenario: Check answer value updates when blue button is clicked
+	Given user navigates to the Challenging DOM url
+	Then Clicking the blue button should update the answer value
+
+Scenario: Check answer value updates when red button is clicked
+	Given user navigates to the Challenging DOM url
+	Then Clicking the red button should update the answer value
+
+Scenario: Check answer value updates when green button is clicked
+	Given user navigates to the Challenging DOM url
+	Then Clicking the green button should update the answer value
