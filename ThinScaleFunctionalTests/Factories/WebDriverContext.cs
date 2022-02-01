@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using ThinScaleFunctionalTests.Steps;
 using TechTalk.SpecFlow;
 
@@ -45,6 +46,29 @@ namespace ThinScaleFunctionalTests.Factories
             Driver.Manage().Window.Maximize();
             return this;
         }
+
+        private WebDriverContext Firefox()
+        {
+
+            var options = new ChromeOptions();
+            // options.AddArgument("--incognito");
+            options.AddArgument("--start-maximized");
+            options.AddArgument("--lang=en");
+            options.AddArgument("--ignore-certificate-errors");
+            options.AddArgument("--disable-extensions");
+            options.AddArgument("--disable-dev-shm-usage");
+            //options.AddArgument("--headless");
+            options.AddArgument("--disable-gpu");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--enable-logging");
+            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            var uri = new UriBuilder(codeBase);
+            var path = Uri.UnescapeDataString(uri.Path);
+            this.Driver = new FirefoxDriver();
+            Driver.Manage().Cookies.DeleteAllCookies();
+            Driver.Manage().Window.Maximize();
+            return this;
+        }
         #endregion
 
         private WebDriverContext SwitchToBrowser()
@@ -56,6 +80,8 @@ namespace ThinScaleFunctionalTests.Factories
                 case "chrome":
                     Console.WriteLine("starting browser session in {0}", browser);
                     return Chrome();
+                case "firefox":
+                    return Firefox();
                 default:
                     throw new Exception(
                         $"{browser} browser is not supported in this test framework");
