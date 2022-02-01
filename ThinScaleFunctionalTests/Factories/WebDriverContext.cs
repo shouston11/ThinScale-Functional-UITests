@@ -50,7 +50,7 @@ namespace ThinScaleFunctionalTests.Factories
         private WebDriverContext Firefox()
         {
 
-            var options = new ChromeOptions();
+            var options = new FirefoxOptions();
             // options.AddArgument("--incognito");
             options.AddArgument("--start-maximized");
             options.AddArgument("--lang=en");
